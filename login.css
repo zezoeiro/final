@@ -1,0 +1,147 @@
+body {
+    background-color: rgb(67, 112, 170);
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    line-height: 10px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(140, 248, 189);
+}
+
+h1 {
+    font-weight: 200;
+    transition: 0.3s all;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 56px;
+    line-height: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+span {
+    color: rgb(125, 233, 174);
+}
+
+p {
+    line-height: 20px;
+    max-width: 500px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    width: 600px;
+    border-radius: 35%;
+    space-between: 20px
+}
+
+#inscreva-se {
+    border: 2px solid  rgb(76, 192, 128);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#inscreva-se:hover {
+    background-color: rgb(140, 248, 189);
+    color: white;
+}
+
+.rgb-title {
+    color: rgb(125, 233, 174);
+}
+
+.rgb-title:hover {
+    transform: scale(1.1);
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+input[type="submit"] {
+    height: 50px;
+    width: 50%;
+    background-color: rgb(73, 158, 111);
+    color: white;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+input {
+    margin-top: 20px;
+    height: 20px;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 960px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px 0;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}

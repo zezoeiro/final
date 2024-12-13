@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <div id="title">
+            <h1>Conecte-se</h1>
+            <h1>Conosco</h1>
+        </div>
+        <nav>
+            <ul class="menu-bar">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="https://www.instagram.com/amaf_df/" target="_blank">Contato</a></li>
+                <li><a href="creat.html" id="inscreva-se">Criar Conta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside>
+            <h2>Utilize agora o</h2>
+            <h2 class="rgb-title">AMAF</h2>
+            <p>Faça login para fazer download do AMAF (Aplicativo de Mapeamento de Árvores Frutíferas).</p>
+            <form id="login-form" method="POST" action="logar.php" novalidate>
+                <input type="email" name="email" id="email" placeholder="Email" required aria-label="Email">
+                <input type="text" name="user" id="user" placeholder="Usuário" required aria-label="User">
+                <input type="submit" value="Entrar >">
+                <p id="message" class="error-message hidden"></p>
+            </form>
+        </aside>
+        <article>
+            <img src="World (1).gif" alt="Imagem de segurança móvel">
+        </article>
+    </main>
+    <script>
+        // Exibe mensagens de erro com base nos parâmetros da URL
+        const params = new URLSearchParams(window.location.search);
+        const messageElement = document.getElementById("message");
+
+        if (params.has('erro')) {
+            switch (params.get('erro')) {
+                case 'credenciais':
+                    messageElement.textContent = "Email ou usuário incorretos. Tente novamente.";
+                    break;
+                case 'servidor':
+                    messageElement.textContent = "Erro no servidor. Tente novamente mais tarde.";
+                    break;
+                case 'nao_permitido':
+                    messageElement.textContent = "Método de acesso inválido.";
+                    break;
+                case 'preencha':
+                    messageElement.textContent = "Por favor, preencha todos os campos corretamente.";
+                    break;
+                default:
+                    messageElement.textContent = "Erro desconhecido. Tente novamente.";
+            }
+            messageElement.classList.remove("hidden");
+        }
+
+        // Valida o preenchimento do formulário antes do envio
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            const email = document.getElementById("email").value.trim();
+            const user = document.getElementById("user").value.trim();
+
+            // Se algum campo estiver vazio, impede o envio
+            if (!email || !user) {
+                event.preventDefault(); // Impede o envio do formulário
+                messageElement.textContent = "Por favor, preencha todos os campos corretamente.";
+                messageElement.classList.remove("hidden");
+            }
+        });
+    </script>
+</body>
+</html>

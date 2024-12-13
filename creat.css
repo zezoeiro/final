@@ -1,0 +1,135 @@
+/* Creat.css */
+
+body {
+    margin: 0;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login > h1 {
+    color: #77ffc0;
+    margin-left: 20px;
+}
+
+.left-login-img {
+    width: 30vw;
+    border-radius: 20%;
+}
+
+.right-login {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.card-login > h1 {
+    color: #00ff88;
+    font-weight: 800;
+    margin: 0;
+}
+/* começo text fild*/
+
+.textfield {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+    width: 100%;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color: #f0ffffde;
+    margin-bottom: 5px;
+}
+
+.textfield > input::placeholder {
+    color: #f0ffff94;
+}
+/* fim text fild*/
+
+/* começo botao estilizaçao */
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+/* fim botao estilizaçao */
+
+
+/* começo estilizaçao menssagem click */
+#success-message {
+    display: none;
+    color: #00ff88;
+    margin-top: 20px;
+}
+/* fimestilizaçao menssagem click */
+
+/*começo do responsivo */
+@media (max-width: 960px) {
+    .main-login {
+        flex-direction: column;
+    }
+    .left-login {
+        display: none; 
+    }
+    .right-login {
+        width: 80vw;
+    }
+    .card-login {
+        width: 100%; 
+    }
+}
+/*fim do responsivo */

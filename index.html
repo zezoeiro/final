@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./style.css">  -->
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--AzulProfundo);
+  color: var(--Branco);
+}
+
+:root {
+  --AzulProfundo: #032B44;
+  --VerdeLimão: #34C759;
+  --Azul-VerdeClaro: #45B3FA;
+  --Ciano: #00BFFF;
+  --Verde-Azul: #0097A7;
+  --Turquesa: #1ABC9C;
+  --Azul-VerdeEscuro: #2E865F;
+  --Branco: #FFFFFF;
+}
+
+header {
+  background-color: var(--Azul-VerdeClaro);
+  padding: 0px 0;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 15%;
+  margin: 0 auto;
+}
+
+section {
+  padding: 2.7rem 0;
+}
+
+.btn-gradient {
+  padding: 10px 25px;
+  color: var(--Branco);
+  border: none;
+  cursor: pointer;
+  background-color: var(--Verde-Azul);
+  transition: background-color 0.3s ease-in-out, transform 1s;
+}
+
+.btn-gradient:hover {
+  background-color: var(--VerdeLimão);
+  transform: scale(1.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.logo a {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--Branco);
+  border-radius: 30%;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  border-radius: 20px;
+  transition: transform 1s;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li {
+  margin: 0 20px;
+  font-size: 15px;
+  color: var(--Branco);
+  transition: color 0.5s, transform 0.5s;
+}
+
+ul li a {
+  color: var(--Branco);
+}
+
+.amaf {
+  width: 20%;
+  height: auto;
+  align-items: center;
+  padding: 10px;
+}
+
+main .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2%;
+  height: 70vh;
+}
+
+.main-txt {
+  width: 50%;
+  color: var(--Branco);
+}
+
+.main-txt h1 {
+  font-size: 4rem;
+}
+
+.main-txt h2 {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.main-txt div {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.main-img {
+  width: 50%;
+}
+
+.main-img img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 5%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .main-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .main-img {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+   
+  }
+  .main-img img {
+    margin: 0 auto;
+  }
+
+}
+
+.social-icon {
+  color: var(--Branco);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icon i {
+  margin-right: 5px;
+}
+
+.social-icon:hover {
+  color: var(--AzulProfundo);
+}
+
+.sub-txt {
+  font-size: 4rem;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, #ffff00);
+  background-size: 800%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: animarTexto 5s infinite linear;
+}
+
+@keyframes animarTexto {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
+
+.sub-txt.esconder {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+
+.resultados {
+  background-color: var(--Verde-Azul);
+}
+
+.resultados .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultados .resultados-txt {
+  color: var(--Branco);
+  font-size: 2.2rem;
+  font-weight: 700;
+  width: 70%;
+  cursor: pointer;
+}
+
+.resultados .resultados-txt:hover {
+  color: #295866;
+  transform: scale(1.1);
+  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+/* começo cards */
+
+.diff .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px auto;
+  gap: 35px;
+}
+
+.diff .card {
+  flex: 1 1 calc(15% - 5px); 
+  padding: 20px;
+  border-radius: 15px;
+  transition: box-shadow 0.6s;
+  color: var(--Branco);
+  width: 25%;
+  background-color: #1d3544;
+
+}
+
+.diff .card:hover {
+  box-shadow: 0px 10px 57px 8px #8c8d8c;
+}
+
+.diff .card .titulo {
+  margin: 13px 0;
+  font-weight: 600;
+}
+@media (max-width:960px) {
+  .diff .container{
+    flex-direction: column;
+    
+  }
+  .diff .card{
+    width: 100%;
+
+  }
+}
+/* fim cards */
+ 
+/* começo imagem exp */
+.exp .container{
+  display: flex;
+  align-items: center;
+  }
+  .exp .exp-img{
+    width: 60%;
+   
+  }
+  .exp .exp-txt{
+    width: 55%;
+    padding-left: 50px;
+    color: #ffffff;
+  }
+  
+  .exp .exp-img img{
+    width: 100%;
+    border: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 35px 97px -15px rgba(0, 0, 0, 0.88);
+  }
+  .exp .exp-txt h2{
+    font-size: 2.5em;
+   
+  }
+  .exp .exp-txt:hover{
+    box-shadow: 0px 10px 57px 8px #4d618d;
+    cursor: pointer;
+  }
+  .exp .exp-txt p{
+    margin: 20px 0;
+    color: #ffffff;
+    cursor: text;
+  
+  }
+  .exp-txt{
+    background-color: #141a2c;
+    border-radius: 20px;
+    margin: 20px;
+  }
+  .txt-gradient{
+    font-size: 4rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, #ffff00);
+    background-size: 800%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: animarTexto 5s infinite linear;
+    cursor: text;
+  }
+  .exp-img:hover{
+    border-radius: 20px;
+    transform: scale(1.1);
+    transition: transform 1s;
+  }
+  
+  
+
+
+ 
+
+/* começo do final */
+.final .azul {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000, #ffff00);
+  background-size: 800%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: animarTexto 5s infinite linear;
+  cursor: text;
+}
+
+.final h2 {
+  font-size: 2.5rem;
+}
+
+.final .cards {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 50px;
+  gap: 20px; 
+}
+
+.final .cards .card-item {
+  flex: 1; 
+  text-align: left;
+  margin-left: 20px;
+  padding: 30px 0;
+  border-radius: 20px;
+  box-shadow: 0px 35px 97px -15px rgba(0, 0, 0, 0.88);
+  background-color: #1d3544; 
+  color: white;
+}
+
+.final .cards .card-item img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+.final .cards .frase {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.frase{
+  padding: 10px 25px;
+  width: 20%;
+border-radius: 7px;
+  color: var(--Branco);
+  border: none;
+  cursor: pointer;
+  background-color: var(--Verde-Azul);
+  transition: background-color 0.3s ease-in-out, transform 1s;
+}
+.frase:hover{
+  background-color: var(--VerdeLimão);
+  transition: 1.5s;
+}
+
+
+
+
+.final .cards .txt {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 10px;
+}
+.card-item .img-ts{
+  border-radius: 10px;
+}
+.card-item .img-ts:hover{
+  transform: scale(1.1);
+  transition: transform 1s;
+}
+.card-item .img-gm:hover{
+  transform: scale(1.1);
+  transition: transform 1s;
+}
+
+/* fim do final */
+
+
+/* começo do footer */
+
+footer {
+  background-color: #55adf5;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  color: #060e55; 
+  text-decoration: none;
+  margin: 0 10px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* fim  do footer */
+
+
+/* esponsividade */
+@media (max-width: 960px) {
+  .menu-icon {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    background-color: #5176db;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    transition: left 0.3s;
+    flex-direction: column;
+    justify-content: center;
+  }
+  ul li {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  ul.ativo {
+    left: 0;
+  }
+  main .container {
+    flex-direction: column;
+  }
+  main .container .main-img {
+    width: 100%;
+  }
+  main .container .main-txt {
+    width: 100%;
+    text-align: center;
+  }
+  main .container .main-txt h1 {
+    font-size: 4rem;
+  }
+  main .container .main-txt div {
+    justify-content: center;
+  }
+  .exp .container{
+    flex-direction: column-reverse;
+
+  }
+  .exp .exp-txt{
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  
+  .main-img {
+    display: none;
+  }
+  }
+</style>
+<body>
+    <div class="background-verde">
+        <!-- Começo cabeçalho -->
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo">
+                        <a href="#"><img src="logoAMAF.enc" alt="logo do AMAF" class="amaf"></a>
+                    </div>
+                    <ul class="ul">
+                        <li>
+                            <a href="https://www.instagram.com/amaf_df/" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/@AMAF_DF" target="_blank" class="social-icon">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </a>
+                        </li>
+                        <li><a href="login.html"><button class="btn-gradient">DOWNLOAD</button></a></li>
+                    </ul>
+                    <div class="menu-icon">
+                        <img src="menu_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="icon menu">
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- Fim cabeçalho -->
+        
+        <!-- Começo Main -->
+        <main>
+            <div class="container">
+                <div class="main-txt">
+                    <h1>Aplicativo de Mapeamento de Árvores Frutíferas</h1>
+                    <div class="sub-txt">
+                        <h2>Modern, New, Basic</h2>
+                    </div>
+                    <div>
+                        <button id="download-btn" class="btn-gradient">DOWNLOAD</button>
+                        <img src="check_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Verificado">
+                    </div>
+                </div>
+                <div class="main-img">
+                    <img src="amafPrinc.jfif" alt="Impactante">
+                </div>
+            </div>
+        </main>
+        <!-- Fim Main -->
+    </div>
+    <!-- começo da parte explicações-->
+    <section class="resultados">
+        <div class="container">
+            <div class="resultados-txt">
+                Conheça mais sobre nosso aplicativo:
+            </div>
+        </div>
+    </section>
+    <!-- fim da parte explicações -->
+    
+    <!-- início da seção diff -->
+    <section class="diff">
+        <div class="container">
+            <div class="card">
+                <img src="settings_accessibility_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="configurações">
+                <h3 class="titulo">Desenvolvido por Adolescentes</h3>
+                <p>Desenvolvido por um grupo de 5 Adolescentes para uma Feira de Ciencias. </p>
+            </div>
+            <div class="card">
+                <img src="install_mobile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="configurações">
+                <h3 class="titulo">Aplicativo totalmente funcional</h3>
+                <p>Conta com um sistema de cadastro de arvores frutiferas de facil uso!</p>
+            </div>
+            <div class="card">
+                <img src="bolt_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="instalar mobile">
+                <h3 class="titulo">Sistema de Bolts</h3>
+                <p>Sistema de bolts implementado para futuramente ser trocaro por Gift Cars!</p>
+            </div>
+        </div>
+    </section>
+    <!-- fim da seção diff -->
+
+    <!-- início da seção exp -->
+    <section class="exp">
+        <div class="container">
+            <div class="exp-img">
+                <img src="CMS.jfif" alt="como surgiu o amaf">
+            </div>
+            <div class="exp-txt">
+                <h2 class="txt-gradient">Como surgiu?</h2>
+                <p>Nosso aplicativo teve origem a partir de uma ideia para participar de uma feira de ciências na nossa escola. Inicialmente, planejamos criar uma maquete mostrando o relevo do Brasil, mas logo percebemos que o projeto carecia de algo mais inovador.
+
+                    Foi então que vimos a oportunidade de incorporar tecnologia ao nosso projeto, desde que estivesse relacionado à natureza. Após várias discussões, surgiu a ideia do AMAF (Aplicativo de Mapeamento de Árvores Frutíferas).  
+            </div>
+        </div>
+    </section>
+    <section class="exp">
+        <div class="container">
+            <div class="exp-img">
+                <img src="AMAFoq.jfif" alt="como surgiu o amaf">
+            </div>
+            <div class="exp-txt">
+                <h2 class="txt-gradient">O que é?</h2>
+                <p>O AMAF (Aplicativo de Mapeamento de Árvores Frutíferas) é uma ferramenta inovadora que permite aos usuários mapear e catalogar árvores frutíferas em sua região. Ele facilita a identificação, registro e compartilhamento de informações sobre essas árvores, promovendo a conscientização ambiental e incentivando a preservação e valorização das árvores frutíferas.</p>
+            </div>
+           
+        </div>
+    </section>
+    <!-- começo final -->
+<section class="final">
+    <div class="container">
+        <p class="azul">Veja mais:</p>
+        <h2>Ultilizamos também</h2>
+      <div class="cards">
+        <div class="card-item">
+          
+            <img src="google-maps-old-svgrepo-com.svg" alt="google maps" class="img-gm">
+            <p class="frase"> API: </p>
+            <p class="txt">Ultilizamos a API do google para mapear a região a sua volta igual o Google Maps. </p>
+          
+            
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card-item">
+            <img src="typescript-icon-svgrepo-com.svg" alt="typescrpt" class="img-ts">
+            <p class="frase"> Linguagem De Promação: </p>
+            <p class="txt">O aplicativo foi feito totalmente com TypeScript. </p>
+            
+        </div>
+     
+
+</section>
+ 
+     <!--incio do footer-->
+     <footer>
+        <p>Siga-nos no Instagram: <a href="https://www.instagram.com/amaf_df" target="_blank">Instagram</a></p>
+        <p>&copy; 2024 Todos os direitos reservados.</p>
+     </footer>
+     <!--fim do footer -->
+
+</body>
+<script>
+    var menuIcon = document.querySelector(".menu-icon");
+    var ul = document.querySelector(".ul");
+
+    menuIcon.addEventListener("click", () => {
+        if (ul.classList.contains("ativo")) {
+            ul.classList.remove("ativo");
+            document.querySelector(".menu-icon img").src = "menu_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
+        } else {
+            ul.classList.add("ativo");
+            document.querySelector(".menu-icon img").src = "close_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg";
+        }
+    });
+
+   
+    var subTxt = document.querySelector(".sub-txt");
+    var mainTxt = document.querySelector(".main-txt");
+    var resultadoTxT = document.querySelector(".resultados-txt");
+
+    if (subTxt) {
+        if (subTxt.classList.contains("ativo")) {
+            subTxt.classList.remove("ativo");
+        } else {
+            subTxt.classList.add("ativo");
+        }
+    }
+
+    if (mainTxt) {
+        if (mainTxt.classList.contains("esconder")) {
+            mainTxt.classList.remove("esconder");
+        } else {
+            mainTxt.classList.add("esconder");
+        }
+    }
+
+    
+    
+;
+</script>
+</html>

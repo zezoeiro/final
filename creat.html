@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="creat.css">
+    <title>Criar Conta</title>
+    <script>
+        // Função para validar o formulário antes de enviar
+        function validateForm(event) {
+            var usuario = document.getElementById("usuario").value;
+            var email = document.getElementById("email").value;
+
+            // Verifica se algum campo está vazio
+            if (usuario === "" || email === "") {
+                event.preventDefault(); // Impede o envio do formulário
+                // Exibe uma mensagem simples (se necessário)
+                alert("Por favor, preencha todos os campos!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <img src="Confirmed.gif" class="left-login-img" alt="animação">
+        </div>
+        <div class="right-login">
+            <div class="card-login"> 
+                <h1>CRIAR CONTA</h1>
+                <form action="process.php" method="POST" onsubmit="validateForm(event)">
+                    <div class="textfield">
+                        <label for="usuario">Digite um Usuário</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Usuário">
+                    </div>
+                    <div class="textfield">
+                        <label for="email">Digite um Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email">
+                    </div>
+                    <button type="submit" id="btn-login" class="btn-login">CRIAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
